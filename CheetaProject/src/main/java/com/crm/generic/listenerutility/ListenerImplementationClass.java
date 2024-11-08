@@ -1,10 +1,7 @@
 package com.crm.generic.listenerutility;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ISuite;
@@ -18,9 +15,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.vtiger.generic.webdriverutility.StaticDriverTestUtility;
+import com.crm.generic.webdriverutility.StaticDriverTestUtility;
 
-import BaseClass1.BaseTest1;
+import BaseClass.BaseTest;
 
 public class ListenerImplementationClass implements ITestListener,ISuiteListener {
 	public ExtentReports report;
@@ -65,7 +62,7 @@ public class ListenerImplementationClass implements ITestListener,ISuiteListener
 			e.printStackTrace();
 		}*/
 		String testName = result.getMethod().getMethodName();
-		TakesScreenshot ts=(TakesScreenshot) BaseTest1.sdriver;
+		TakesScreenshot ts=(TakesScreenshot) BaseTest.sdriver;
 		String filepath = ts.getScreenshotAs(OutputType.BASE64);
 		
 		
@@ -81,7 +78,7 @@ public class ListenerImplementationClass implements ITestListener,ISuiteListener
 		ITestListener.super.onTestStart(result);
 	    test = report.createTest(result.getMethod().getMethodName());
 	    test.log(Status.INFO, result.getMethod().getMethodName()+"STARTED");
-	    StaticDriverTestUtility.setTest(test);
+	   StaticDriverTestUtility.setTest(test);
 	}
 
 	@Override
