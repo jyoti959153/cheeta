@@ -197,5 +197,6 @@ public class WebDriverUtility {
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 	}
+	
 
 }
