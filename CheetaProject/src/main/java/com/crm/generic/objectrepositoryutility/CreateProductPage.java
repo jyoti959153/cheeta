@@ -17,8 +17,9 @@ WebDriver driver;
 	private WebElement productlink;
 	public WebElement getproductlink()
 	{
-		return productlink;
+		
 		System.out.println("ji");
+		return productlink;
 	}
 
 
