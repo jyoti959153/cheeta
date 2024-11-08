@@ -18,8 +18,12 @@ WebDriver driver;
 	public WebElement getproductlink()
 	{
 
+		System.out.println("print code");
+
+
 		System.out.println("hiiiiiiiii");
 		System.out.println("jimmcmsdfghjk");
+
 
 		return productlink;
 	}
